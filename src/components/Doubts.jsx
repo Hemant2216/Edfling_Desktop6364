@@ -11,15 +11,16 @@ const Doubts = ({ doubtsData }) => {
             <p>{doubt.question}</p>
           </div>
           <div>
-            <a href={doubt.link} className="text-base sm:text-lg text-teal-900 underline px-2 sm:px-4">
+            <a
+              href={doubt.link}
+              className="text-base sm:text-lg text-teal-900 underline px-2 sm:px-4"
+            >
               View Doubt
             </a>
           </div>
         </div>
       ))}
     </div>
-  
-  
   );
 };
 
