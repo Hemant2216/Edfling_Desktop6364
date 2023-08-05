@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   return (
-    <div>
+    <>
       <button
         data-drawer-target="default-sidebar"
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
         class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-slate-50 hover:bg-opacity-25 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+        onClick={handleSidebarToggle}
+
       >
         <span class="sr-only">Open sidebar</span>
         <svg
@@ -28,13 +35,14 @@ const Sidebar = () => {
 
       <aside
         id="default-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 font-poppins text-sm"
-        aria-label="Sidebar"
+        className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full sm:translate-x-0'
+        }`}
+                aria-label="Sidebar"
       >
         <div class="h-full px-5 py-4 overflow-y-auto bg-teal-900">
           <div
             className="w-32 h-20 relative"
-            // style={{ backgroundImage: `url(${'/images/Ellipse.png'})`,backgroundRepeat:'no-repeat' }}
           >
             <img src="/images/Ellipse.png" alt="" />
             <div className="absolute top-5 px-2">
@@ -43,7 +51,7 @@ const Sidebar = () => {
               </p>
             </div>
           </div>
-          <ul class="">
+          <ul className="space-y-2" >
             <li>
               <a
                 href="/"
@@ -224,7 +232,7 @@ const Sidebar = () => {
           />
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 
