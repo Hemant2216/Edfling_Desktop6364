@@ -12,9 +12,10 @@ const Pagination = () => {
 
   return (
     <div className="font-poppins">
-      <div className="flex flex-col sm:flex-row overflow-x-auto overflow-y-auto max-h-40">
+    <div className="flex max-h-40 overflow-x-auto flex-wrap">
+      <div className="flex  flex-col md:flex-row sm:flex-nowrap w-full space-y-1">
         <span
-          className={`mx-3 my-1 text-lg cursor-pointer ${
+          className={`mx-3 text-base sm:text-base md:text-base lg:text-lg cursor-pointer whitespace-nowrap ${
             activeLesson === null
               ? "text-teal-900 border-b-4 border-teal-900 rounded"
               : "text-teal-900/50"
@@ -26,7 +27,7 @@ const Pagination = () => {
         {lessons.map((lesson) => (
           <span
             key={lesson}
-            className={`mx-3 my-1 text-lg cursor-pointer ${
+            className={`mx-3 text-base sm:text-base md:text-base lg:text-lg cursor-pointer whitespace-nowrap ${
               activeLesson === lesson
                 ? "text-teal-900 border-b-4 border-teal-900 rounded"
                 : "text-teal-900/50"
@@ -37,10 +38,14 @@ const Pagination = () => {
           </span>
         ))}
       </div>
-      <div className="mt-1 sm:mt-5">
-        <Doubts doubtsData={doubtsData} />
-      </div>
     </div>
+  
+    <div className="mt-5 md:max-w-full md:overflow-x-auto overflow-y-auto">
+      <Doubts doubtsData={doubtsData} />
+    </div>
+  </div>
+  
+  
   );
 };
 

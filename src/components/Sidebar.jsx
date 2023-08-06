@@ -15,7 +15,6 @@ const Sidebar = () => {
         type="button"
         class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-slate-50 hover:bg-opacity-25 focus:outline-none focus:ring-2 focus:ring-gray-200 "
         onClick={handleSidebarToggle}
-
       >
         <span class="sr-only">Open sidebar</span>
         <svg
@@ -36,14 +35,12 @@ const Sidebar = () => {
       <aside
         id="default-sidebar"
         className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full sm:translate-x-0'
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
         }`}
-                aria-label="Sidebar"
+        aria-label="Sidebar"
       >
         <div class="h-full px-5 py-4 overflow-y-auto bg-teal-900">
-          <div
-            className="w-32 h-20 relative"
-          >
+          <div className="w-32 h-20 relative">
             <img src="/images/Ellipse.png" alt="" />
             <div className="absolute top-5 px-2">
               <p className="self-center  text-xl font-semibold whitespace-nowrap text-white font-poppins">
@@ -51,7 +48,7 @@ const Sidebar = () => {
               </p>
             </div>
           </div>
-          <ul className="space-y-2" >
+          <ul className="space-y-2">
             <li>
               <a
                 href="/"
@@ -94,7 +91,7 @@ const Sidebar = () => {
                 <span class="flex-1 ml-3 whitespace-nowrap">Leaderboard</span>
               </a>
             </li>
-            <li>
+            <li >
               <a
                 href="/"
                 class="flex items-center p-2 text-white rounded-lg  hover:bg-gray-100/50"
@@ -225,11 +222,7 @@ const Sidebar = () => {
               </a>
             </li>
           </ul>
-          <img
-            src="./images/blobs.png"
-            alt="blob"
-            className="fixed bottom-0 right-0 w-64 h-22"
-          />
+            <img src="./images/blobs.png" alt="blob" className="fixed bottom-0 right-0 w-full  h-1/5"/>
         </div>
       </aside>
     </>
