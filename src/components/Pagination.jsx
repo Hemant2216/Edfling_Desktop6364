@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Doubts from "./Doubts";
-import doubtsData from "./doubtsData";
+import Bookmarks from "./Bookmarks";
+import bookmarkData from "./bookmarkData";
 
 const Pagination = () => {
   const lessons = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -13,7 +13,7 @@ const Pagination = () => {
   return (
     <div className="font-poppins">
     <div className="flex max-h-40 overflow-x-auto flex-wrap">
-      <div className="flex  flex-col md:flex-row sm:flex-nowrap w-full space-y-1">
+      <div className="flex  flex-row md:flex-row sm:flex-nowrap w-full space-y-1">
         <span
           className={`mx-3 text-base sm:text-base md:text-base lg:text-lg cursor-pointer whitespace-nowrap ${
             activeLesson === null
@@ -41,7 +41,7 @@ const Pagination = () => {
     </div>
   
     <div className="mt-5 md:max-w-full md:overflow-x-auto overflow-y-auto">
-      <Doubts doubtsData={doubtsData} />
+      <Bookmarks bookmarkData={bookmarkData} />
     </div>
   </div>
   

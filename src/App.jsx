@@ -1,11 +1,11 @@
 import Sidebar from "./components/Sidebar";
-import AskDoubt from "./pages/AskDoubt";
+import Bookmark from "./pages/Bookmark";
 
 function App() {
   return (
     <div className="App">
       <Sidebar />
-      <AskDoubt />
+      <Bookmark />
     </div>
   );
 }
